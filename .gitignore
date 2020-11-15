@@ -1,0 +1,13 @@
+#ignore weight files
+*.h5
+
+#ignore vscode files
+.vscode
+
+#ignore envirionment files
+.env
+.venv
+env/
+venv/
+
+
