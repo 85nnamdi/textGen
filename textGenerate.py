@@ -23,7 +23,7 @@ X,y, dataX, dataY, int_to_char, n_vocab = util.data_prepare(args.inputText, args
 model = util.models(X,y)
 
 # load the network weights
-filename = "weights-improvement-20-1.9555.hdf5"
+filename = "weights-improvement-04-2.2806.hdf5"
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 

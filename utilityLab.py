@@ -39,7 +39,7 @@ class util:
     print ("Total Vocab: ", n_vocab)
     
     # prepare the dataset of input to output pairs encoded as integers
-    seq_length = 100
+    seq_length = 200
     dataX = []
     dataY = []
     for i in range(0, n_chars - seq_length, 1):
@@ -60,7 +60,8 @@ class util:
   def models(X,y):
     # define the LSTM model
     model = Sequential()
-    model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
+    model.add(LSTM(256, return_sequences=True, input_shape=(X.shape[1], X.shape[2])))
+    model.add(LSTM(256,input_shape=(X.shape[1], X.shape[2]) ))
     model.add(Dropout(0.2))
     model.add(Dense(y.shape[1], activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam')
